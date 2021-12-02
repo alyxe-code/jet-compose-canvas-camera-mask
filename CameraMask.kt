@@ -21,14 +21,14 @@ import androidx.compose.ui.unit.dp
 import com.google.accompanist.pager.ExperimentalPagerApi
 
 private fun DrawScope.drawMaskBackground() {
-    val fullscreenPath = Path().apply {
+    val screenPath = Path().apply {
         moveTo(0f, 0f)
         lineTo(size.width, 0f)
         lineTo(size.width, size.height)
         lineTo(0f, size.height)
     }
 
-    val windowPath = Path().apply {
+    val framePath = Path().apply {
         addRoundRect(
             roundRect = RoundRect(
                 rect = Rect(
@@ -48,8 +48,8 @@ private fun DrawScope.drawMaskBackground() {
 
     val combinedPath = Path().apply {
         op(
-            path1 = fullscreenPath,
-            path2 = windowPath,
+            path1 = screenPath,
+            path2 = framePath,
             operation = PathOperation.Difference,
         )
     }
