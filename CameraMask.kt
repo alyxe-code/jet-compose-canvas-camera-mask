@@ -48,7 +48,7 @@ private fun DrawScope.drawMaskBackground() {
 
     val combinedPath = Path().apply {
         op(
-            path1 = screenPath,
+            path1 = backgroundPath,
             path2 = framePath,
             operation = PathOperation.Difference,
         )
