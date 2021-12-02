@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.dp
 import com.google.accompanist.pager.ExperimentalPagerApi
 
 private fun DrawScope.drawMaskBackground() {
-    val screenPath = Path().apply {
+    val backgroundPath = Path().apply {
         moveTo(0f, 0f)
         lineTo(size.width, 0f)
         lineTo(size.width, size.height)
